@@ -20,8 +20,6 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     min-height: 100vh;
-    /* The fix is here: */
-    overflow-x: hidden;
 }
 
 .app-container {
@@ -29,6 +27,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    /* Removed box-shadow to prevent it from showing on the edges */
     background: var(--card-bg-color);
 }
 
@@ -41,6 +40,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    /* Removed max-width to allow it to fill the screen */
 }
 
 .app-header {
@@ -184,20 +184,10 @@ body {
         border-radius: 12px;
         background: var(--bg-color);
         display: grid;
-        grid-template-columns: auto 600px auto;
+        grid-template-columns: 1fr 600px 1fr;
         grid-template-rows: auto 1fr auto;
         gap: 10px;
         padding: 20px;
-    }
-
-    .desktop-logo-container-top-left {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
-        padding: 20px;
-        transform: perspective(300px) rotate(-5deg);
     }
 
     .desktop-logo-container-top-right {
@@ -211,8 +201,8 @@ body {
     }
 
     .company-logo {
-        max-width: 600px;
-        max-height: 750px;
+        max-width: 300px;
+        max-height: 150px;
         opacity: 0.7;
     }
 
