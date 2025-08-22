@@ -15,18 +15,18 @@
     padding: 0;
 }
 
-body {
+html, body {
+    height: 100%; /* Important: set height on both html and body */
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    min-height: 100vh;
-    /* The fix is here: */
     overflow-x: hidden;
 }
 
 .app-container {
     width: 100%;
-    height: 1200vh;
+    height: 100%; /* Use 100% instead of a fixed vh value */
     display: flex;
     flex-direction: column;
     background: var(--card-bg-color);
@@ -39,6 +39,7 @@ body {
 
 .main-content-wrapper {
     width: 100%;
+    height: 100%; /* Ensure main wrapper takes full height */
     display: flex;
     flex-direction: column;
 }
@@ -57,7 +58,7 @@ body {
 }
 
 .app-main {
-    flex-grow: 1;
+    flex-grow: 1; /* This makes the chat area fill all available space */
     overflow-y: auto;
     padding: 1.5rem;
     display: flex;
@@ -181,23 +182,23 @@ body {
     .app-container {
         width: 90%;
         max-width: 1200px;
-        height: 800px;
-        max-height: 800Vx;
+        height: 90vh; /* Re-apply vh height for desktop */
+        max-height: 800px;
         border-radius: 12px;
         background: var(--bg-color);
         display: grid;
-        grid-template-columns: auto 600px auto;
+        grid-template-columns: 1fr 600px 1fr;
         grid-template-rows: auto 1fr auto;
-        gap: 1px;
-        padding: 1px;
+        gap: 10px;
+        padding: 20px;
     }
 
     .desktop-logo-container-top-left {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        grid-column: 1 / 1;
-        grid-row: 1 / 1;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         padding: 20px;
         transform: perspective(300px) rotate(-5deg);
     }
@@ -213,14 +214,14 @@ body {
     }
 
     .company-logo {
-        max-width: 600px;
-        max-height: 750px;
+        max-width: 500px;
+        max-height: 450px;
         opacity: 0.7;
     }
 
     .main-content-wrapper {
         grid-column: 2 / 3;
-        grid-row:1/30;
+        grid-row: 1 / 4;
         display: flex;
         flex-direction: column;
         background: var(--card-bg-color);
