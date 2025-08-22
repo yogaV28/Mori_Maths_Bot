@@ -26,11 +26,12 @@ body {
 
 .app-container {
     width: 100%;
-    height: 100vh; /* Use 100% of the viewport height to fill the screen */
+    height: 1200vh;
     display: flex;
     flex-direction: column;
     background: var(--card-bg-color);
 }
+
 .desktop-logo-container-top-left,
 .desktop-logo-container-top-right {
     display: none;
